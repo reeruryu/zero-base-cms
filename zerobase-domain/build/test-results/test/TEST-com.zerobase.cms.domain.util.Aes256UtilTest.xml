@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.zerobase.cms.domain.util.Aes256UtilTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-29T08:13:59" hostname="LAPTOP-VEDTS9KE" time="0.177">
+  <properties/>
+  <testcase name="encrypt()" classname="com.zerobase.cms.domain.util.Aes256UtilTest" time="0.177"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
