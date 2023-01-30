@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-api/zerobase-cms.order-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-api/zerobase-cms.order-api.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-api/zerobase-cms.user-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/user-api/zerobase-cms.user-api.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/zerobase-domain/zerobase-cms.zerobase-domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/zerobase-domain/zerobase-cms.zerobase-domain.main.iml" />
     </modules>
