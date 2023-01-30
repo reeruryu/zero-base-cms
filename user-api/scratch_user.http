@@ -3,7 +3,7 @@ POST http://localhost:8081/signUp/customer
 Content-Type: application/json
 
 {
-  "birth" : "98-09-22",
+  "birth" : "1998-09-22",
   "email" : "h2ju1004@gmail.com",
   "name" : "ryureeru",
   "password" : "pw",
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (고객)
-GET http://localhost:8081/signUp/customer/verify?email=h2ju1004@gmail.com&code=
+GET http://localhost:8081/signUp/customer/verify?email=h2ju1004@gmail.com&code=9wOzsQ079a
 
 ### 로그인 (고객)
 POST http://localhost:8081/signIn/customer
@@ -25,17 +25,17 @@ Content-Type: application/json
 ### 회원 정보 조회 (고객)
 GET http://localhost:8081/customer/getInfo
 Content-Type: application/json
-X-AUTH-TOKEN:
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUwODc5MjMsImV4cCI6MTY3NTE3NDMyM30.7CCrhELk7qZa0DVECITVh4X0vU59Q5XjXMDfW4-UkMc
 
 ### 잔액 변경 (고객)
 POST http://localhost:8081/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN:
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUwODc5MjMsImV4cCI6MTY3NTE3NDMyM30.7CCrhELk7qZa0DVECITVh4X0vU59Q5XjXMDfW4-UkMc
 
 {
   "from" : "server",
   "message" : "돈 충전",
-  "money" : 50000
+  "money" : 500
 }
 
 #############################
@@ -45,7 +45,7 @@ POST http://localhost:8081/signUp/seller
 Content-Type: application/json
 
 {
-  "birth" : "98-09-22",
+  "birth" : "1998-09-22",
   "email" : "h2ju1004@gmail.com",
   "name" : "ryureeru",
   "password" : "pw",
@@ -53,7 +53,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (셀러)
-GET http://localhost:8081/signUp/seller/verify?email=h2ju1004@gmail.com&code=
+GET http://localhost:8081/signUp/seller/verify?email=h2ju1004@gmail.com&code=xNQImKc3wy
 
 ### 로그인 (셀러)
 POST http://localhost:8081/signIn/seller

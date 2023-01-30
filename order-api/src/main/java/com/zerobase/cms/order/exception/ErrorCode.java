@@ -8,7 +8,8 @@ import org.springframework.http.HttpStatus;
 @Getter
 public enum ErrorCode {
 
-	TMP(HttpStatus.BAD_REQUEST, "")
+	NOT_FOUND_PRODUCT(HttpStatus.BAD_REQUEST, "상품을 찾을 수 없습니다."),
+	SAME_ITEM_NAME(HttpStatus.BAD_REQUEST, "중복된 아이템 명입니다.")
 	;
 
 	private final HttpStatus httpStatus;
