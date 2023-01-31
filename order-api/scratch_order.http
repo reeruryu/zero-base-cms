@@ -12,7 +12,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N
       "price": 10000
     }
   ],
-  "name": "나이키 에어포스"
+  "name": "nike 에어포스"
 }
 
 ### 상품 아이템 추가
@@ -67,3 +67,11 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N
 DELETE http://localhost:8082/seller/product/item?id=12
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MTQyMzY3LCJleHAiOjE2NzUyMjg3Njd9.Y-Pe7Svtf4dQxUkXpMh_2n4RUhRH1jIR7KMOoU4ctvc
+
+### 상품 검색
+GET http://localhost:8082/search/product?name=nike
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET http://localhost:8082/search/product/detail?productId=8
+Content-Type: application/json
