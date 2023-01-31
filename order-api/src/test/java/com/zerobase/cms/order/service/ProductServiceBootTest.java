@@ -67,4 +67,5 @@ class ProductServiceBootTest {
 			.count(1)
 			.build();
 	}
+
 }
