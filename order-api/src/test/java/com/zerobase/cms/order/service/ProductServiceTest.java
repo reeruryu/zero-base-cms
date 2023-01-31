@@ -3,6 +3,8 @@ package com.zerobase.cms.order.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import com.zerobase.cms.order.domain.model.Product;
 import com.zerobase.cms.order.domain.model.ProductItem;
@@ -13,6 +15,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -63,6 +66,36 @@ class ProductServiceTest {
 		assertEquals(p.getName(), form.getName());
 		assertEquals(p.getDescription(), form.getDescription());
 		assertEquals(p.getProductItems().get(1).getName(), form.getItems().get(1).getName());
+
+	}
+
+	@Test
+	void deleteProduct() {
+		// given
+		Long sellerId = 1L;
+		Product product = Product.builder()
+			.id(1L)
+			.sellerId(sellerId)
+			.name("nike")
+			.description("신발!!")
+			.productItems(Arrays.asList(
+				ProductItem.builder()
+					.id(1L).sellerId(sellerId).name("white").price(10000).count(234).build(),
+				ProductItem.builder()
+					.id(2L).sellerId(sellerId).name("검정색").price(12000).count(345).build()
+			))
+			.build();
+
+		given(productRepository.findBySellerIdAndId(anyLong(), anyLong()))
+			.willReturn(Optional.of(product));
+		ArgumentCaptor<Product> captor = ArgumentCaptor.forClass(Product.class);
+
+		// when
+		productService.deleteProduct(1L, 1L);
+
+		// then
+		verify(productRepository, times(1)).delete(captor.capture());
+		assertEquals(2, captor.getValue().getProductItems().size());
 
 	}
 
