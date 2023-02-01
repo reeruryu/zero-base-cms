@@ -51,6 +51,11 @@ public class CartApplication {
 		return returnCart;
 	}
 
+	public Cart updateCart(Long customerId, Cart cart) {
+		cartService.putCart(customerId, cart);
+		return getCart(customerId);
+	}
+
 	public void clearCart(Long customerId) {
 		cartService.putCart(customerId, null);
 	}
