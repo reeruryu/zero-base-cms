@@ -19,14 +19,19 @@ public class CartService {
 	private final RedisClient redisClient;
 
 	public Cart getCart(Long customerId) {
-		return redisClient.get(customerId, Cart.class);
+		Cart cart = redisClient.get(customerId, Cart.class);
+		return cart != null ? cart : new Cart(customerId);
+	}
+
+	public Cart putCart(Long customerId, Cart cart) {
+		redisClient.put(customerId, cart);
+		return cart;
 	}
 
 	public Cart addCart(Long customerId, AddProductCartForm form) {
 		Cart cart = redisClient.get(customerId, Cart.class);
 		if (cart == null) {
-			cart = new Cart();
-			cart.setCustomerId(customerId);
+			cart = new Cart(customerId);
 		}
 		// 이전에 같은 상품이 있냐
 		Optional<Product> productOptional = cart.getProducts().stream()
