@@ -75,3 +75,23 @@ Content-Type: application/json
 ### 상품 디테일 검색
 GET http://localhost:8082/search/product/detail?productId=8
 Content-Type: application/json
+
+### 장바구니 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUyMjI4MDksImV4cCI6MTY3NTMwOTIwOX0.MawP7DnjCLLr4qJe3PXscZEtdPuk6vl8wN43IXS9tXs
+
+{
+  "description": "상품 설명",
+  "id": 7,
+  "items": [
+    {
+      "id": 14,
+      "count": 1,
+      "name": "230",
+      "price": 10000
+    }
+  ],
+  "name": "nike 에어포스",
+  "sellerId": 2
+}
