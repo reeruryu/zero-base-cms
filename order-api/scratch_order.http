@@ -79,19 +79,62 @@ Content-Type: application/json
 ### 장바구니 추가
 POST http://localhost:8082/customer/cart
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUyMjI4MDksImV4cCI6MTY3NTMwOTIwOX0.MawP7DnjCLLr4qJe3PXscZEtdPuk6vl8wN43IXS9tXs
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
 
 {
-  "description": "상품 설명",
-  "id": 7,
+  "description": "신발입니다.",
+  "id": 1,
   "items": [
     {
-      "id": 14,
-      "count": 1,
-      "name": "230",
+      "id": 1,
+      "count": 3,
+      "name": "nike 에어포스0",
+      "price": 10000
+    },
+    {
+      "id": 2,
+      "count": 4,
+      "name": "nike 에어포스1",
       "price": 10000
     }
   ],
   "name": "nike 에어포스",
-  "sellerId": 2
+  "sellerId": 1
+}
+
+### 카트 조회
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
+
+### 카트 주문
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "nike 에어포스",
+      "description": "신발입니다.",
+      "items": [
+        {
+          "id": 1,
+          "count": 3,
+          "name": "nike 에어포스0",
+          "price": 10000
+        },
+        {
+          "id": 2,
+          "count": 4,
+          "name": "nike 에어포스1",
+          "price": 10000
+        }
+      ]
+    }
+  ],
+  "messages": []
 }
